@@ -19,18 +19,18 @@ RAG-NVMe is a high-performance, resource-efficient Retrieval-Augmented Generatio
 
 ```mermaid
 graph TD
-    UserQuery[User Request / API Call] --> Cache{L1/L2 Semantic Cache?}
-    Cache -- Hit (Similarity >= 90%) --> DirectResponse[Instant Cached Answer (0ms GPU/TPU)]
-    Cache -- Miss --> Search[Multi-Tier Retrieval Engine]
-    Search --> BloomFilter{BQ Bloom Index}
-    BloomFilter --> NVMeStore[(Direct NVMe Block Store)]
-    NVMeStore --> Context[Relevant Fact/Context Blocks]
-    Context --> PromptBuilder[Prompt Compiler]
-    PromptBuilder --> BatchQueue[Dynamic Async Inferenz-Queue]
-    BatchQueue --> LLM[Local/Remote LLM (Ollama/vLLM)]
-    LLM --> GeneratedResponse[Generated Response]
-    GeneratedResponse --> CacheWrite[Update L2 Cache]
-    CacheWrite --> User[Return Response]
+    UserQuery["User Request / API Call"] --> Cache{"L1/L2 Semantic Cache?"}
+    Cache -- "Hit (Similarity >= 90%)" --> DirectResponse["Instant Cached Answer (0ms GPU/TPU)"]
+    Cache -- "Miss" --> Search["Multi-Tier Retrieval Engine"]
+    Search --> BloomFilter{"BQ Bloom Index"}
+    BloomFilter --> NVMeStore[("Direct NVMe Block Store")]
+    NVMeStore --> Context["Relevant Fact/Context Blocks"]
+    Context --> PromptBuilder["Prompt Compiler"]
+    PromptBuilder --> BatchQueue["Dynamic Async Inferenz-Queue"]
+    BatchQueue --> LLM["Local/Remote LLM (Ollama/vLLM)"]
+    LLM --> GeneratedResponse["Generated Response"]
+    GeneratedResponse --> CacheWrite["Update L2 Cache"]
+    CacheWrite --> User["Return Response"]
 ```
 
 ---
