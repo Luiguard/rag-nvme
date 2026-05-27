@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=RAG NVMe Zentrale
+GenericName=Universal-KI-Zentrale
+Comment=Allwissende lokale KI-Plattform mit NVMe-Block-Store & Domänen-Manager (100% offline)
+Exec=bash -c 'cd /home/benjamin/projects/rag-nvme && ./start-rag.sh'
+Path=/home/benjamin/projects/rag-nvme
+Terminal=false
+Categories=Development;Utility;Science;
+StartupNotify=true
+Keywords=AI;KI;RAG;NVMe;Zentrale;Hauptmenü;

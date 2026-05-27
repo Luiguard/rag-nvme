@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=CustomRAG – Lokale KI
+GenericName=KI-Assistent
+Comment=Trainiere und chatte mit deiner eigenen lokalen KI (100% offline)
+Exec=bash -c 'cd /home/benjamin/projects/rag-custom-knowledge && .venv/bin/python gui_custom_collector.py'
+Path=/home/benjamin/projects/rag-custom-knowledge
+Terminal=false
+Categories=Development;Utility;Science;
+StartupNotify=true
+Keywords=AI;KI;RAG;Chat;Wissen;

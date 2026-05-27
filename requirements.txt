@@ -1,0 +1,14 @@
+lancedb
+pyarrow
+langchain-text-splitters
+langchain-huggingface
+sentence-transformers
+requests
+ollama
+trafilatura
+beautifulsoup4
+pymupdf
+uvicorn
+numpy
+zstandard
+internetarchive

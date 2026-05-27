@@ -1,0 +1,16 @@
+[Unit]
+Description=CustomRAG Update Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=benjamin
+WorkingDirectory=/home/benjamin/projects/rag-custom-knowledge
+ExecStart=/home/benjamin/projects/rag-custom-knowledge/.venv/bin/python update_server.py
+Restart=on-failure
+RestartSec=15
+Environment=RAG_UPDATE_PORT=9720
+
+[Install]
+WantedBy=multi-user.target

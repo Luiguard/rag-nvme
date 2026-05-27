@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=RAG-Kollektor & NVMe Compiler
+GenericName=RAG Wissensaufbau
+Comment=Wissensdatenbank aufbauen und ins extrem schnelle NVMe-Format kompilieren
+Exec=bash -c 'cd /home/benjamin/projects/rag-custom-knowledge && .venv/bin/python gui_collector.py'
+Path=/home/benjamin/projects/rag-custom-knowledge
+Terminal=false
+Categories=Development;Utility;Science;
+StartupNotify=true
+Keywords=AI;KI;RAG;NVMe;Compiler;Wissen;

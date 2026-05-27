@@ -1,0 +1,17 @@
+[Unit]
+Description=RAG Custom Knowledge Mesh Server
+After=network-online.target ollama.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=benjamin
+WorkingDirectory=/home/benjamin/projects/rag-custom-knowledge
+ExecStart=/home/benjamin/projects/rag-custom-knowledge/.venv/bin/python rag_server.py 8090
+Restart=on-failure
+RestartSec=10
+Environment=RAG_PREFER_LOCAL=1
+Environment=RAG_MESH_HTTP_PORT=9711
+
+[Install]
+WantedBy=multi-user.target
