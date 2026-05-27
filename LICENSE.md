@@ -21,3 +21,6 @@ Any corporation, enterprise, partnership, or commercial entity (defined as any e
 
 ### 3. Liability
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+### 4. Third-Party Data Attribution
+The `demo_index/` directory contains a small sample of publicly available community-contributed content from StackExchange, used exclusively for demonstration and proof-of-concept purposes. This content is licensed under [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/). Original content is attributed to the respective StackExchange community authors. No proprietary, copyrighted, or restricted data is included in this repository.

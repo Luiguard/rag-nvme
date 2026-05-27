@@ -68,6 +68,38 @@ By pairing **RAG-NVMe** with modern hardware, your infrastructure footprint shri
 
 ---
 
+## 🐳 Docker Deployment
+
+```bash
+docker compose up --build -d
+```
+
+| Service | Port | Description |
+| :--- | :--- | :--- |
+| **RAG Server** | `8090` | ASGI Enterprise API |
+| **Prometheus** | `9090` | Metrics Scraping |
+| **Grafana** | `3000` | Dashboards (admin/admin) |
+
+---
+
+## 📦 Demo Index (Proof of Concept)
+
+The `demo_index/` directory ships a minimal **50-entry LanceDB index** with Full-Text Search (FTS) to verify the retrieval pipeline without building a full index. Data is sourced from publicly available StackExchange content under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+```bash
+python3 -c "
+import lancedb
+db = lancedb.connect('demo_index')
+tbl = db.open_table('demo_blocks')
+print(f'Entries: {tbl.count_rows()}')
+results = tbl.search('Linux partition', query_type='fts').limit(3).to_list()
+for r in results:
+    print(f'  {r[\"source\"]} | {r[\"text\"][:80]}')
+"
+```
+
+---
+
 ## ⚖️ License & Mandatory Corporate Attribution
 
 Copyright (c) 2026 **Benjamin Leimer**. All rights reserved.
@@ -78,4 +110,5 @@ This software is released under a **Custom Attribution License**.
 *   **Corporations & Commercial Entities**: Free to deploy and integrate **on the strict condition** that **Benjamin Leimer** is credited prominently.
     *   **UI Requirement**: Commercial applications utilizing this software or its core concepts (Semantic L1/L2 Caching, Direct NVMe Streaming) must display:
         > **"Incorporates RAG-NVMe architecture designed by Benjamin Leimer."**
-    *   **Enterprise Scaling**: For deployments exceeding 50 concurrent active users, or direct monetization of this architecture, you must acquire an explicit commercial license. Refer to [LICENSE.md](file:///home/benjamin/projects/rag-nvme/LICENSE.md) for full terms.
+    *   **Enterprise Scaling**: For deployments exceeding 50 concurrent active users, or direct monetization of this architecture, you must acquire an explicit commercial license. Refer to [LICENSE.md](LICENSE.md) for full terms.
+*   **Demo Data**: The `demo_index/` contains StackExchange content under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). See [LICENSE.md](LICENSE.md) §4 for details.
